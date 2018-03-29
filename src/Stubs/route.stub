@@ -1,0 +1,6 @@
+
+Route::get('{{models}}', '{{Model}}Controller@index');
+Route::post('{{models}}', '{{Model}}Controller@store');
+Route::get('{{models}}/{{{model}}}', '{{Model}}Controller@show');
+Route::patch('{{models}}/{{{model}}}', '{{Model}}Controller@update');
+Route::delete('{{models}}/{{{model}}}', '{{Model}}Controller@destroy');

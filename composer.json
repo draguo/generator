@@ -1,0 +1,30 @@
+{
+    "name": "draguo/generator",
+    "description": "Scaffold Generator for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "draguo",
+            "email": "draguo@sina.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.7",
+        "laravel/laravel": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Draguo\\Generator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Draguo\\Generator\\GeneratorsServiceProvider"
+            ]
+        }
+    }
+}

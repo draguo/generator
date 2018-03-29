@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use {{namespace}}Models\{{Model}};
+use Illuminate\Http\Request;
+use App\Http\Requests\{{Model}}Request;
+use App\Http\Resources\{{Model}}Resource;
+
+class {{Model}}Controller extends ApiController
+{
+
+	public function index(Request $request)
+	{
+		$builder = {{Model}}::query();
+		$data = $builder->paginate($request->input('per_page', 20));
+
+		return {{Model}}Resource::collection($data);
+	}
+
+    public function show({{Model}} ${{model}})
+    {
+        return ${{model}};
+    }
+
+	public function store({{Model}}Request $request)
+	{
+	    $data = $request->all();
+		{{Model}}::create($data);
+
+        return $this->created();
+	}
+
+	public function update({{Model}}Request $request, {{Model}} ${{model}})
+	{
+		${{model}}->update($request->all());
+
+        return $this->success('更新成功');
+	}
+
+	public function destroy({{Model}} ${{model}})
+	{
+		${{model}}->delete();
+
+        return $this->success('删除成功');
+	}
+}
